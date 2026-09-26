@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>ima知识库下载器  by数智化教学大冯老师</title>
+<style>
+  :root { --green: #00785A; --green-d: #005f47; --bg: #f4f7f6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font: 14px/1.6 "Microsoft YaHei UI", sans-serif; background: var(--bg); color: #222; padding: 16px; }
+  h1 { font-size: 18px; color: var(--green); margin-bottom: 4px; }
+  .sub { color: #888; font-size: 12px; margin-bottom: 12px; }
+  .card { background: #fff; border-radius: 10px; padding: 14px; margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  label { font-size: 13px; color: #555; }
+  input[type=text], input[type=password], select {
+    padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; outline: none;
+  }
+  input:focus, select:focus { border-color: var(--green); }
+  button {
+    padding: 6px 14px; border: 0; border-radius: 6px; background: var(--green); color: #fff;
+    font-size: 13px; cursor: pointer; white-space: nowrap;
+  }
+  button:hover { background: var(--green-d); }
+  button.gray { background: #8a9490; }
+  button.gray:hover { background: #6f7a75; }
+  #crumb { font-size: 13px; color: #555; margin: 6px 0; }
+  #crumb a { color: var(--green); cursor: pointer; text-decoration: none; }
+  #list { border: 1px solid #e3e8e6; border-radius: 8px; max-height: 46vh; overflow: auto; }
+  .item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-bottom: 1px solid #f0f3f2; cursor: default; }
+  .item:hover { background: #f2f8f6; }
+  .item .t { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tag { font-size: 11px; padding: 1px 7px; border-radius: 10px; background: #e8f2ef; color: var(--green); flex-shrink: 0; }
+  .tag.folder { background: #fdf3e3; color: #b8860b; }
+  .tag.skip { background: #eee; color: #999; }
+  .item.folder { cursor: pointer; }
+  #log { height: 130px; overflow: auto; background: #0d1f1a; color: #9fe3c8; font: 12px/1.5 Consolas, monospace; border-radius: 8px; padding: 8px 10px; }
+  .foot { text-align: center; color: #aaa; font-size: 12px; margin-top: 10px; }
+  .badge { display: inline-block; background: var(--green); color: #fff; border-radius: 4px; font-size: 12px; padding: 0 6px; }
+  .progress { font-size: 12px; color: var(--green); min-width: 90px; text-align: right; }
+</style>
+</head>
+<body>
+  <h1>ima知识库下载器 <span class="badge">ima 加载项版</span></h1>
+  <div class="sub">在 ima 中直接下载知识库资料 · 文档原格式 / 笔记TXT / 网页转存HTML · by 数智化教学大冯老师@冯萌刚</div>
+
+  <div class="card">
+    <div class="row">
+      <label>Client ID：</label><input type="text" id="cid" style="width:250px" placeholder="ima.qq.com/agent-interface 申请">
+      <label>API Key：</label><input type="password" id="key" style="width:250px" placeholder="留空则用下方已保存凭证">
+      <button id="btnSave">保存凭证</button>
+      <button id="btnClear" class="gray">清除凭证</button>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <label>知识库：</label>
+      <select id="kb" style="min-width:280px"><option value="">（请先连接）</option></select>
+      <button id="btnLoad">连接并列出</button>
+      <button id="btnAll" class="gray">全选</button>
+      <button id="btnNone" class="gray">全不选</button>
+      <button id="btnDown">下载勾选项</button>
+      <span class="progress" id="prog"></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div id="crumb">请先连接知识库。</div>
+    <div id="list"><div class="item"><span class="t" style="color:#999">（空）</span></div></div>
+  </div>
+
+  <div id="log">等待操作...</div>
+  <div class="foot">数智化教学大冯老师@冯萌刚 · 网页类条目自动打印为 PDF（图片完整加载）· 打印时浏览器顶部显示调试提示属正常现象</div>
+
+<script src="downloader.js"></script>
+</body>
+</html>

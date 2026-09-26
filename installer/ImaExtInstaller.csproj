@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>大冯老师的ima下载插件安装器</AssemblyName>
+    <StartupObject>ImaExtInstaller.Program</StartupObject>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <Version>1.1.0</Version>
+    <Product>ima知识库下载器加载项安装器</Product>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\ima-extension\extension\manifest.json">
+      <LogicalName>Installer.manifest</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\sw.js">
+      <LogicalName>Installer.sw</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\content.js">
+      <LogicalName>Installer.content</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\downloader.html">
+      <LogicalName>Installer.downloader</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\downloader.js">
+      <LogicalName>Installer.downloaderjs</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\icon16.png">
+      <LogicalName>Installer.icon16</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\icon48.png">
+      <LogicalName>Installer.icon48</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\ima-extension\extension\icon128.png">
+      <LogicalName>Installer.icon128</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\wklogo.png">
+      <LogicalName>Installer.wklogo</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

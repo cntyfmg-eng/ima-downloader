@@ -1,0 +1,39 @@
+# ===== .NET 构建产物 =====
+bin/
+obj/
+build/
+
+# ===== 已发布的二进制 / 安装包（请通过 GitHub Releases 获取） =====
+*.exe
+*.dll
+*.rar
+
+# ===== 凭证（严禁提交） =====
+ima_config.json
+
+# ===== 日志与临时文件 =====
+*.log
+exe_stdout.log
+publog.txt
+*.deps.json
+*.runtimeconfig.json
+*.url
+
+# ===== 本地杂项 =====
+新建文件夹/
+cover/
+20260925102045.png
+
+# ===== 扩展实验目录 =====
+ima-extension/_exp/
+
+# ===== WorkBuddy 内部目录 =====
+.workbuddy/
+
+# ===== 演示视频（体积大，单独发布） =====
+*.mp4
+
+# ===== Visual Studio / IDE =====
+*.user
+*.suo
+.vs/

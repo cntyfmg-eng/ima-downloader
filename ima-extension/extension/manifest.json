@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "ima知识库下载器",
+  "version": "1.2.0",
+  "description": "在 ima 中直接浏览并下载知识库资料（网页转存/文档原格式/笔记TXT）— by 数智化教学大冯老师",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3dyaFP2yqU94QArScHEA8uq5mABY/oil0LQs1gBb7FrrsbxqbXL+8sg7S23lhGAdzmXt1y84CfQm0fSAAFCJEGrEvLcgMQL+rWPD2kS8LoY8fZz1mqfcSEYNu++Opb0Ci6U8bDRkC4aQ631tm1D5vMf/jgAWKq5GAgSdY+5jX1UL4Bsvr8lmDsNOHLw5vmBT+xBdauLDoC1yZrb8ZZ4pjpl15bCwHT9WpkptuTe7R1KWBm6mgYX8YEyf2Jw9QpFIrzIiHxnpPeSNollCXp7sQJLQOxyhYHQf8xRY6e81r8N8+uf/4Ida5FMRcL7ThPk0Bje2JEkQQLVDSsGh5wU/HwIDAQAB",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "ima知识库下载器",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ima.qq.com/*",
+        "https://ima-pre.qq.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "downloader.html"
+      ],
+      "matches": [
+        "https://ima.qq.com/*",
+        "https://ima-pre.qq.com/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "downloads",
+    "tabs",
+    "debugger"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

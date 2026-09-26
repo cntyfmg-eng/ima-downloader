@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>ima知识库下载器</AssemblyName>
+    <StartupObject>ImaDownloader.Program</StartupObject>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <Version>1.1.5</Version>
+    <Product>ima知识库下载器</Product>
+    <AssemblyTitle>ima知识库下载器</AssemblyTitle>
+    <Description>浏览并下载个人 ima 知识库资料</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\qr.jpg">
+      <LogicalName>ImaDownloader.qr.jpg</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resources\wklogo.png">
+      <LogicalName>ImaDownloader.wk-logo.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
